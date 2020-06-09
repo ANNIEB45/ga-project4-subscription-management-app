@@ -14,6 +14,7 @@ class Subscription(models.Model):
 
 class Category(models.Model):
     group = models.CharField(max_length=250)
+    subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='subscription')
 
     def __str__(self):
         return self.group
@@ -23,4 +24,4 @@ class History(models.Model):
     amount = models.DecimalField(max_digits=5, decimal_places=2)
     payment_type = models.CharField(max_length=250)
     total_amt = models.DecimalField(max_digits=5, decimal_places=2)
-    
+    subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='subscription')
