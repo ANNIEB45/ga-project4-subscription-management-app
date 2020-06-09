@@ -5,7 +5,7 @@ from django.db import models
 class Subscription(models.Model):
     name = models.CharField(max_length=250)
     due_date = models.DateField(auto_now_add=True)
-    amount = models.DecimalField(default=0, max_digits=5, decimal_places=2)
+    amount = models.DecimalField(max_digits=5, decimal_places=2)
     frequency = models.CharField(max_length=250)
     image_url = models.TextField(blank=True)
 
@@ -14,7 +14,7 @@ class Subscription(models.Model):
 
 class Category(models.Model):
     group = models.CharField(max_length=250)
-    subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='subscription')
+    subscribe = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='kind')
 
     def __str__(self):
         return self.group
@@ -24,4 +24,7 @@ class History(models.Model):
     amount = models.DecimalField(max_digits=5, decimal_places=2)
     payment_type = models.CharField(max_length=250)
     total_amt = models.DecimalField(max_digits=5, decimal_places=2)
-    subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='subscription')
+    name = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='record')
+
+    def __str__(self):
+        return self.total_amt
