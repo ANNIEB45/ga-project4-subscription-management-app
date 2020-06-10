@@ -5,17 +5,17 @@ from .models import Category, Subscription, History
 class HistorySerializer(serializers.ModelSerializer):
     
     class Meta:
-        model: History
-        field: ('id',
+        model = History
+        fields = ('id',
         'date',
         'payment_type',
         'total_amt')
 
 class SubscriptionSerializer(serializers.ModelSerializer):
-    histories = HistorySerializer(many='True', read_only='True')
+    histories = HistorySerializer(many=True, read_only=True)
     class Meta:
-        model: Subscription
-        field: ('id',
+        model = Subscription
+        fields = ('id',
         'due_date',
         'amount',
         'frequency',
@@ -23,10 +23,10 @@ class SubscriptionSerializer(serializers.ModelSerializer):
         'histories')
 
 class CategorySerializer(serializers.ModelSerializer):
-    subscriptions = SubscriptionSerializer(many='True', read_only='True')
+    subscriptions = SubscriptionSerializer(many=True, read_only=True)
     class Meta:
-        model: Category
-        field: ('id',
+        model = Category
+        fields = ('id',
         'group',
         'subscriptions')
 
