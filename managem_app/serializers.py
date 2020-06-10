@@ -6,16 +6,14 @@ class HistorySerializer(serializers.ModelSerializer):
     
     class Meta:
         model = History
-        fields = ('id',
-        'date',
-        'payment_type',
-        'total_amt')
+        fields = '__all__'
 
 class SubscriptionSerializer(serializers.ModelSerializer):
     histories = HistorySerializer(many=True, read_only=True)
     class Meta:
         model = Subscription
         fields = ('id',
+        'name',
         'due_date',
         'amount',
         'frequency',
