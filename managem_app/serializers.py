@@ -8,14 +8,11 @@ class HistorySerializer(serializers.ModelSerializer):
         model: History
         field: ('id',
         'date',
-        'amount',
         'payment_type',
-        'total_amt',
-        'subscription')
+        'total_amt')
 
 class SubscriptionSerializer(serializers.ModelSerializer):
-    histories = HistorySerializer(many=True, read_only=True)
-    
+    histories = HistorySerializer(many='True', read_only='True')
     class Meta:
         model: Subscription
         field: ('id',
@@ -23,20 +20,13 @@ class SubscriptionSerializer(serializers.ModelSerializer):
         'amount',
         'frequency',
         'image_url',
-        'category')
+        'histories')
 
 class CategorySerializer(serializers.ModelSerializer):
-
+    subscriptions = SubscriptionSerializer(many='True', read_only='True')
     class Meta:
         model: Category
-        field: '__all__'
-
-class HomeSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model: Subscription
         field: ('id',
-        'due_date',
-        'amount',
-        'image_url',
-        'category')
+        'group',
+        'subscriptions')
+
