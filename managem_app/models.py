@@ -10,7 +10,7 @@ class Category(models.Model):
 
 class Subscription(models.Model):
     name = models.CharField(max_length=250)
-    due_date = models.DateField(auto_now_add=False)
+    due_date = models.DateField(auto_now_add=True)
     amount = models.DecimalField(max_digits=5, decimal_places=2)
     frequency = models.CharField(max_length=250)
     image_url = models.TextField(blank=True)
@@ -22,7 +22,7 @@ class Subscription(models.Model):
 
 
 class History(models.Model):
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField(auto_now_add=False)
     payment_type = models.CharField(max_length=250)
     total_amt = models.DecimalField(max_digits=5, decimal_places=2)
     subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='records')
