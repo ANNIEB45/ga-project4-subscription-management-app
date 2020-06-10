@@ -3,18 +3,35 @@ import axios from 'axios'
 
 export default class Home extends Component {
     state = {
-        subscriptions: []
+        categories: [],
+        subscriptions: [],
     }
 
     componentDidMount() {
+        this.getAllCategories()
         this.getAllSubscriptions()
     }
 
+
+    getAllCategories = async () => {
+
+        try {
+            const res = await axios.get('/api/v1/category/')
+            const newState = { ...this.state }
+            newState.categories = res.data
+            this.setState(newState)
+        } catch (err) {
+            console.log('Error getting all subscriptions')
+            console.log(err)
+        }
+    }
+
     getAllSubscriptions = async () => {
+
         try {
             const res = await axios.get('/api/v1/subscription/')
             const newState = { ...this.state }
-            newState.subscription = res.data
+            newState.subscriptions = res.data
             this.setState(newState)
         } catch (err) {
             console.log('Error getting all subscriptions')
@@ -23,19 +40,26 @@ export default class Home extends Component {
     }
 
     render() {
-        const { subscriptions } = this.state
-        // console.log(subscriptions)
+        const { subscriptions, categories } = this.state
+
+        console.log(categories)
         return (
             <div>
                 <h2>Home Page</h2>
-                { subscriptions.map((item) => {
+                { categories.map((item) => {
                     return (
                         <div>
-                            <img src={item.image_url} />
-                            <div> Name: { item.name }</div>
-                            <div>{ item.due_date }</div>
-                            <div>{ item.amount }</div>
-                            <div>{ item.frequency }</div>
+                            <h3>{ item.group }</h3>
+                            <div>{item.subscriptions}</div>
+                            { subscriptions.map((item) =>
+                                <div>
+                                    <img src={ item.image_url } width="100" height="80" alt="subscription image" />
+                                    <div> Name: { item.name }</div>
+                                    <div>{ item.due_date }</div>
+                                    <div>{ item.amount }</div>
+                                    <div>{ item.frequency }</div>
+                                </div>
+                            ) }
                         </div>
                     )
                 }) }
