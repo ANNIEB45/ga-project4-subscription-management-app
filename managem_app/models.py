@@ -14,7 +14,7 @@ class Subscription(models.Model):
     amount = models.DecimalField(max_digits=5, decimal_places=2)
     frequency = models.CharField(max_length=250)
     image_url = models.TextField(blank=True)
-    subscribe = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='subscriptions')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='subscriptions')
 
     def __str__(self):
         return self.name
@@ -26,7 +26,7 @@ class History(models.Model):
     amount = models.DecimalField(max_digits=5, decimal_places=2)
     payment_type = models.CharField(max_length=250)
     total_amt = models.DecimalField(max_digits=5, decimal_places=2)
-    name = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='records')
+    subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE, related_name='records')
 
     def __str__(self):
-        return str(self.name)
+        return str(self.subscription)
