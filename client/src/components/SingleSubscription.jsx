@@ -15,7 +15,7 @@ export default class SingleSubscription extends Component {
         amount: 0,
         frequency: '',
         image_url: '',
-        history: []
+        records: []
     }
 
     componentDidMount() {
@@ -58,7 +58,19 @@ export default class SingleSubscription extends Component {
                 <div>{ this.state.frequency }</div>
                 <div>{ this.state.due_date }</div>
                 <div>{ this.state.amount }</div>
-                <div>{ this.state.history }</div>
+                
+                <h1>History</h1>
+                <div>{ this.state.records.map((item) => {
+                    return (
+                        
+                        <div>
+                            { item.date }
+                            {this.state.amount}
+                            { item.payment_type }
+                            {item.total_amt}
+                        </div>
+                    )
+                }) }</div>
                 <button>Delete</button>
                
             </div>
