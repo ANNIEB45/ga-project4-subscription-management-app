@@ -20,7 +20,7 @@ export default class SingleSubscription extends Component {
 
     componentDidMount() {
         this.getSingleSubscription()
-        this.getAllHistory()
+        // this.getAllHistory()
     }
 
     getSingleSubscription = async () => {
@@ -35,23 +35,29 @@ export default class SingleSubscription extends Component {
         }
     }
 
-    getAllHistory = async() => {
-        try{
-            const res = await axios.get('/api/v1/history/')
-            const newState = { ...this.state }
-            newState.history = res.data
-            console.log(res.data)
-            this.setState(newState)
-        } catch (err) {
-            console.log('failed to get history')
-            console.log(err)
-        }
-    }
+    // getAllHistory = async() => {
+    //     try{
+    //         const res = await axios.get('/api/v1/history/')
+    //         const newState = { ...this.state }
+    //         newState.history = res.data
+    //         console.log(res.data)
+    //         this.setState(newState)
+    //     } catch (err) {
+    //         console.log('failed to get history')
+    //         console.log(err)
+    //     }
+    // }
     render() {
         return (
             <div>
-                <img scr={ this.state.image_url } />
+                <div>
+                    <img src={ this.state.image_url } width="600" />
+                </div>
                 <div>{ this.state.name }</div>
+                <div>{ this.state.frequency }</div>
+                <div>{ this.state.due_date }</div>
+                <div>{ this.state.amount }</div>
+                <div>{ this.state.history }</div>
                
             </div>
         )
