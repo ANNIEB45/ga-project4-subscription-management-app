@@ -20,7 +20,7 @@ export default class SingleSubscription extends Component {
 
     componentDidMount() {
         this.getSingleSubscription()
-        // this.getAllHistory()
+        // this.getHistory()
     }
 
     getSingleSubscription = async () => {
@@ -35,29 +35,31 @@ export default class SingleSubscription extends Component {
         }
     }
 
-    // getAllHistory = async() => {
-    //     try{
-    //         const res = await axios.get('/api/v1/history/')
-    //         const newState = { ...this.state }
-    //         newState.history = res.data
+    // getHistory = async() => {
+    //     try {
+    //         const historyId = this.props.match.params.subscriptionId
+    //         const res = await axios.get(`/api/v1/history/${historyId}/`)
+    //         this.setState(res.data)
     //         console.log(res.data)
-    //         this.setState(newState)
+            
     //     } catch (err) {
-    //         console.log('failed to get history')
     //         console.log(err)
     //     }
     // }
+
+    // how to load history for subscription
     render() {
         return (
             <div>
                 <div>
-                    <img src={ this.state.image_url } width="600" />
+                    <img src={ this.state.image_url } width="400" height="250" />
                 </div>
                 <div>{ this.state.name }</div>
                 <div>{ this.state.frequency }</div>
                 <div>{ this.state.due_date }</div>
                 <div>{ this.state.amount }</div>
                 <div>{ this.state.history }</div>
+                <button>Delete</button>
                
             </div>
         )
