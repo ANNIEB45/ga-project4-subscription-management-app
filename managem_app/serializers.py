@@ -9,7 +9,7 @@ class HistorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class SubscriptionSerializer(serializers.ModelSerializer):
-    histories = HistorySerializer(many=True, read_only=True)
+    records = HistorySerializer(many=True, read_only=True)
     class Meta:
         model = Subscription
         fields = ('id',
@@ -18,7 +18,7 @@ class SubscriptionSerializer(serializers.ModelSerializer):
         'amount',
         'frequency',
         'image_url',
-        'histories')
+        'records')
 
 class CategorySerializer(serializers.ModelSerializer):
     subscriptions = SubscriptionSerializer(many=True, read_only=True)
