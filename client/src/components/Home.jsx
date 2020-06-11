@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import CreateSubscription from './CreateSubscription'
 import { Link } from 'react-router-dom'
+
+import './Home.css'
 
 export default class Home extends Component {
     state = {
@@ -25,6 +28,7 @@ export default class Home extends Component {
             console.log(err)
         }
     }
+    //WORKS
 
 
 
@@ -32,14 +36,15 @@ export default class Home extends Component {
         const { categories } = this.state
         console.log(categories)
         return (
-            <div>
+            <div className='home-container'>
                 <h2>Home Page</h2>
                 <button>Add Subscription</button>
+                <CreateSubscription />
                 { categories.map((item) => {
                     return (
-                        <div key={ `${item.id}` }>
+                        <div key={ `${item.id}` } className='subs-container'>
                             
-                            <h3>{ item.group }</h3>
+                            <h3 className='group-title'>{ item.group }</h3>
                             { item.subscriptions.map((subs) => {
                                 return (
                                     <div key={ `${subs.id}` }>
