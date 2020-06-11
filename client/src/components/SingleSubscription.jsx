@@ -20,7 +20,6 @@ export default class SingleSubscription extends Component {
 
     componentDidMount() {
         this.getSingleSubscription()
-        // this.getHistory()
     }
 
     getSingleSubscription = async () => {
@@ -35,19 +34,15 @@ export default class SingleSubscription extends Component {
         }
     }
 
-    // getHistory = async() => {
-    //     try {
-    //         const historyId = this.props.match.params.subscriptionId
-    //         const res = await axios.get(`/api/v1/history/${historyId}/`)
-    //         this.setState(res.data)
-    //         console.log(res.data)
-            
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // }
+    getTotalPayment = () => {
+        let sum = 0
+        const { records } = this.state
+        records.forEach((amt) => {
+            sum += amt.total_amt
+        })
+        return sum
+    } //how do i add the amount and add to total element
 
-    // how to load history for subscription
     render() {
         return (
             <div>
@@ -58,21 +53,21 @@ export default class SingleSubscription extends Component {
                 <div>{ this.state.frequency }</div>
                 <div>{ this.state.due_date }</div>
                 <div>{ this.state.amount }</div>
-                
+
                 <h1>History</h1>
+                <div>Total: { this.getTotalPayment() }</div>
                 <div>{ this.state.records.map((item) => {
                     return (
-                        
+
                         <div>
-                            { item.date }
-                            {this.state.amount}
-                            { item.payment_type }
-                            {item.total_amt}
+                            <div>{ item.date }</div>
+                            <div>{ this.state.amount }</div>
+                            <div>{ item.payment_type }</div>
                         </div>
                     )
                 }) }</div>
                 <button>Delete</button>
-               
+
             </div>
         )
     }
