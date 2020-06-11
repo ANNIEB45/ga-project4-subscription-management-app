@@ -39,15 +39,17 @@ export default class Home extends Component {
             <div className='home-container'>
                 <h2>Home Page</h2>
                 <button>Add Subscription</button>
-                <CreateSubscription />
-                { categories.map((item) => {
+                <CreateSubscription
+                    getAllCategories={ this.getAllCategories }
+                    category = {this.state.categories }/>
+                { categories.map((item, index) => {
                     return (
-                        <div key={ `${item.id}` } className='subs-container'>
+                        <div key={ `o43ub${index}` } className='subs-container'>
                             
                             <h3 className='group-title'>{ item.group }</h3>
-                            { item.subscriptions.map((subs) => {
+                            { item.subscriptions.map((subs, index) => {
                                 return (
-                                    <div key={ `${subs.id}` }>
+                                    <div key={ `240b4nbr${index}` }>
 
                                         <Link to={ `/subscription/${subs.id}` }>
                                             <img src={ subs.image_url } width="100" height="75" />

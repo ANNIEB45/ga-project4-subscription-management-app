@@ -34,14 +34,14 @@ export default class SingleSubscription extends Component {
         }
     }
 
-    getTotalPayment = () => {
-        let sum = 0
-        const { records } = this.state
-        records.forEach((amt) => {
-            sum += amt.total_amt
-        })
-        return sum
-    } //how do i add the amount and add to total element
+    // getTotalPayment = () => {
+    //    //get begining amount
+    //     //add addition amount to it
+    //     let firstPayment = 0
+    //     firstPayment += this.state.amount
+
+    // } 
+    //how do i add the amount and add to total element
 
     render() {
         return (
@@ -55,11 +55,11 @@ export default class SingleSubscription extends Component {
                 <div>{ this.state.amount }</div>
 
                 <h1>History</h1>
-                <div>Total: { this.getTotalPayment() }</div>
-                <div>{ this.state.records.map((item) => {
+                {/* <div>Total: { this.getTotalPayment() }</div> */}
+                <div>{ this.state.records.map((item, index) => {
                     return (
 
-                        <div>
+                        <div key={`2b4kpf${index}`}>
                             <div>{ item.date }</div>
                             <div>{ this.state.amount }</div>
                             <div>{ item.payment_type }</div>
