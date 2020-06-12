@@ -1,12 +1,8 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 
-// name = models.CharField(max_length=250)
-//     due_date = models.DateField(auto_now_add=True)
-//     amount = models.DecimalField(max_digits=5, decimal_places=2)
-//     frequency = models.CharField(max_length=250)
-//     image_url = models.TextField(blank=True)
 
 export default class SingleSubscription extends Component {
     state = {
@@ -15,7 +11,8 @@ export default class SingleSubscription extends Component {
         amount: 0,
         frequency: '',
         image_url: '',
-        records: []
+        records: [],
+        redirect: false
     }
 
     componentDidMount() {
@@ -34,18 +31,30 @@ export default class SingleSubscription extends Component {
         }
     }
 
-    // getTotalPayment = () => {
-    //    //get begining amount
-    //     //add addition amount to it
-    //     let firstPayment = 0
-    //     firstPayment += this.state.amount
-
-    // } 
-    //how do i add the amount and add to total element
+    getTotalPayment = () => {
+        let sum = 0
+        this.state.records.forEach((item) => {
+            sum += parseFloat(item.total_amt)
+        })
+        return sum
+    } 
+   
+    onDelete = async () => {
+        const subsId = this.props.match.params.subscriptionId
+        console.log('I am deleting')
+        try {
+            await axios.delete(`/api/v1/subscription/${subsId}/`)
+            this.props.history.push('/')
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     render() {
         return (
             <div>
+                <button onClick={ () => this.onDelete()}>Delete</button>
+                <button>Update</button>
                 <div>
                     <img src={ this.state.image_url } width="400" height="250" />
                 </div>
@@ -55,7 +64,7 @@ export default class SingleSubscription extends Component {
                 <div>{ this.state.amount }</div>
 
                 <h1>History</h1>
-                {/* <div>Total: { this.getTotalPayment() }</div> */}
+                <div>Total: { this.getTotalPayment() }</div>
                 <div>{ this.state.records.map((item, index) => {
                     return (
 
@@ -66,7 +75,6 @@ export default class SingleSubscription extends Component {
                         </div>
                     )
                 }) }</div>
-                <button>Delete</button>
 
             </div>
         )
