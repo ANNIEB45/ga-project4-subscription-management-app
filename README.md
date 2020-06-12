@@ -13,9 +13,15 @@
 
 ## Project Board
 ![PB](https://trello.com/b/vVjLSCp4/subscription-management-service)
+https://trello.com/b/vVjLSCp4/subscription-management-service
 
 ### ERD
-![ERD](https://imgur.com/r1meIm9)
+![ERD](https://imgur.com/LnnPYKP)
+https://imgur.com/LnnPYKP
 
 ## Wireframes
-![WireFrame](https://imgur.com/eAewgMl)
+![WireFrame1](https://imgur.com/Lw5ghs6)
+https://imgur.com/Lw5ghs6
+
+![Wireframe2](https://imgur.com/YY8sS1m)
+https://imgur.com/YY8sS1m
