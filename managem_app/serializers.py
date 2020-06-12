@@ -18,6 +18,7 @@ class SubscriptionSerializer(serializers.ModelSerializer):
         'amount',
         'frequency',
         'image_url',
+        'category',
         'records')
 
 class CategorySerializer(serializers.ModelSerializer):
