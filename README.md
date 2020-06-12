@@ -9,7 +9,7 @@
 * Better styling
 * Calender to visualize payment due dates
 
-## _Visit [Manag'Em App](https://managem.herokuapp.com/)
+## _Visit [Manag'Em App](https://managem.herokuapp.com/)_
 
 ## Project Board
 ![PB](https://trello.com/b/vVjLSCp4/subscription-management-service)
@@ -17,11 +17,11 @@ https://trello.com/b/vVjLSCp4/subscription-management-service
 
 ### ERD
 ![ERD](https://i.imgur.com/2XknZma.png))
-https://imgur.com/LnnPYKP
+
 
 ## Wireframes
 ![Home Page](https://i.imgur.com/Lw5ghs6.png)
-https://imgur.com/Lw5ghs6
+
 
 ![Single Subscription Page](https://i.imgur.com/YY8sS1m.png))
-https://imgur.com/YY8sS1m
+
