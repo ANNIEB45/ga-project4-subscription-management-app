@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+
+import './SingleSubscription.css'
 
 
 export default class SingleSubscription extends Component {
@@ -37,8 +39,8 @@ export default class SingleSubscription extends Component {
             sum += parseFloat(item.total_amt)
         })
         return sum
-    } 
-   
+    }
+
     onDelete = async () => {
         const subsId = this.props.match.params.subscriptionId
         console.log('I am deleting')
@@ -50,28 +52,43 @@ export default class SingleSubscription extends Component {
         }
     }
 
+    // onUpdate = async () => {
+    //     const subsId = this.props.match.params.subscriptionId
+    //     console.log('i\'ve been updated')
+    //     try {
+    //         await axios.put(`/api/v1/subscription/${subsId}`, this.state)
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
+
     render() {
         return (
-            <div>
-                <button onClick={ () => this.onDelete()}>Delete</button>
-                <button>Update</button>
-                <div>
-                    <img src={ this.state.image_url } width="400" height="250" />
+            <div className='single-container'>
+                <button onClick={ () => this.onDelete() }>Delete</button>
+                {/* <button onClick={ () => this.onUpdate() }>Update</button> */ }
+                <div className='item-container'>
+                    <div>
+                        <img src={ this.state.image_url } width="400" height="250" />
+                    </div>
+                    <div className='item-wrapper'>
+                        <div>{ this.state.name }</div>
+                        <div>Frequency:{ this.state.frequency }</div>
+                        <div>Due:{ this.state.due_date }</div>
+                        <div>Amt:{ this.state.amount }</div>
+                    </div>
                 </div>
-                <div>{ this.state.name }</div>
-                <div>{ this.state.frequency }</div>
-                <div>{ this.state.due_date }</div>
-                <div>{ this.state.amount }</div>
-
-                <h1>History</h1>
-                <div>Total: { this.getTotalPayment() }</div>
+                <div className='history-heading'>
+                    <h1>History</h1>
+                    <h3>Total: ${ this.getTotalPayment() }</h3>
+                </div>
                 <div>{ this.state.records.map((item, index) => {
                     return (
 
-                        <div key={`2b4kpf${index}`}>
-                            <div>{ item.date }</div>
-                            <div>{ this.state.amount }</div>
-                            <div>{ item.payment_type }</div>
+                        <div className='history-wrapper' key={ `2b4kpf${index}` }>
+                            <div>Date: { item.date }</div>
+                            <div>Amount: ${ this.state.amount }</div>
+                            <div>Payment Type: { item.payment_type }</div>
                         </div>
                     )
                 }) }</div>

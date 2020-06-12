@@ -1,0 +1,29 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fieldset{
+    /* display: flex; */
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+
+.fieldset label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.form-select{
+    display: flex;
+    margin: 0 10px;
+}

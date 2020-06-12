@@ -1,10 +1,18 @@
 .home-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
 }
 
+.home-container h2{
+    line-height: 35px;
+    text-align: center;
+    text-decoration: underline;
+    position: relative;
+    letter-spacing: 10px;
+}
 .subs-container{
     display: flex;
     flex-direction: row;

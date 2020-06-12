@@ -34,33 +34,36 @@ export default class Home extends Component {
 
     render() {
         const { categories } = this.state
-        console.log(categories)
+
         return (
             <div className='home-container'>
-                <h2>Home Page</h2>
-                {/* <button>Add Subscription</button> */}
+                <h2>Manag'Em</h2>
+                {/* <button>Add Subscription</button> */ }
                 <CreateSubscription
                     getAllCategories={ this.getAllCategories }
-                    category = {this.state.categories }/>
+                    category={ this.state.categories } />
                 { categories.map((item, index) => {
                     return (
                         <div key={ `23rpn${index}` } className='subs-container'>
-                            
+
                             <h3 className='group-title'>{ item.group }</h3>
+                            
                             { item.subscriptions.map((subs, index) => {
                                 return (
                                     <div key={ `rlbsfs3${index}` }>
 
                                         <Link to={ `/subscription/${subs.id}` }>
-                                            <img src={ subs.image_url } width="100" height="75" />
-                                            <div>{ subs.name }</div>
-                                            {/* if group is paid, show date/amt,freq..if free show only name and img */}
-                                            { item.group === 'paid' ?
-                                                <div>
-                                                    <div>{ subs.due_date }</div>
-                                                    <div>{ subs.amount }</div>
-                                                    <div>{ subs.frequency }</div>
-                                                </div> : null }
+                                            <div>
+                                                <img src={ subs.image_url } width="100" height="75" />
+                                                <div>{ subs.name }</div>
+                                                {/* if group is paid, show date/amt,freq..if free show only name and img */ }
+                                                { item.group === 'paid' ?
+                                                    <div>
+                                                        <div>{ subs.due_date }</div>
+                                                        <div>{ subs.amount }</div>
+                                                        <div>{ subs.frequency }</div>
+                                                    </div> : null }
+                                            </div>
                                         </Link>
                                     </div>
 
