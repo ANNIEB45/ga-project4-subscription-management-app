@@ -20,8 +20,8 @@ https://trello.com/b/vVjLSCp4/subscription-management-service
 https://imgur.com/LnnPYKP
 
 ## Wireframes
-![WireFrame1](https://imgur.com/Lw5ghs6)
+![Home Page](https://imgur.com/Lw5ghs6)
 https://imgur.com/Lw5ghs6
 
-![Wireframe2](https://imgur.com/YY8sS1m)
+![Single Subscription Page](https://imgur.com/YY8sS1m)
 https://imgur.com/YY8sS1m
