@@ -16,7 +16,7 @@
 https://trello.com/b/vVjLSCp4/subscription-management-service
 
 ### ERD
-![ERD](https://imgur.com/LnnPYKP)
+![ERD](https://i.imgur.com/2XknZma.png))
 https://imgur.com/LnnPYKP
 
 ## Wireframes
