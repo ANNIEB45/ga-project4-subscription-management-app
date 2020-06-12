@@ -11,7 +11,7 @@ export default class CreateSubscription extends Component {
             amount: 0,
             frequency: '',
             image_url: '',
-            category_id: this.props.category[0] || ''
+            category: []
         }
     }
 
@@ -41,16 +41,34 @@ export default class CreateSubscription extends Component {
             <div>
                 <form
                     onSubmit={ this.handleSubmit }>
+                    
+                    <label>
+                        Choose a Category:
+                        <select
+                            multiple={true}
+                            name='category'
+                            value={ [newSubscription.category] }
+                            // passing an array in the value attribute since we set multiple to true
+                            onChange={ this.handleOnChange }>
+                            { this.props.category.map((item,index) => {
+                                return (
+                                    <option  key={ `4brl${index}` } value={ item.id } >{item.group}</option>
+                                )
+                            }) }
+                        </select>
+                    </label>
+
                     <input
                         type='text'
                         name='name'
                         placeholder="Subscription Name"
                         value={ newSubscription.name }
                         onChange={ this.handleOnChange } />
+                    
                     <input
                         type='date'
-                        name='date'
-                        value={ newSubscription.date }
+                        name='due_date'
+                        value={ newSubscription.due_date }
                         onChange={ this.handleOnChange } />
                     <input
                         type='number'
@@ -70,19 +88,7 @@ export default class CreateSubscription extends Component {
                         value={ newSubscription.image_url }
                         onChange={ this.handleOnChange } />
 
-                    <label>
-                        <select
-                            name='category_id'
-                            value={ newSubscription.category_id }
-                            onChange={ this.handleOnChange }>
-                            { this.props.category.map((item) => {
-                                return (
-                                    <option value={ item.id }>{item.group}</option>
-                                )
-                            }) }
-
-                        </select>
-                    </label>
+                
 
                     <input
                         type="submit"
