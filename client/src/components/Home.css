@@ -15,11 +15,44 @@
 }
 .subs-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     margin: 10px 10px;
 }
 
 .group-title{
     margin: 0 10px;
+}
+
+.subs-wrappper{
+    display: flex;
+    width: 550px;
+}
+
+.subs-item-container{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    object-fit: contain;
+    overflow: auto;
+}
+
+.subs-item-container img{
+    object-fit: fill;
+}
+
+.sub-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.subs-paid-container{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 60px;
 }

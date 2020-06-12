@@ -50,15 +50,15 @@ export default class Home extends Component {
                             
                             { item.subscriptions.map((subs, index) => {
                                 return (
-                                    <div key={ `rlbsfs3${index}` }>
+                                    <div className='subs-wrappper' key={ `rlbsfs3${index}` }>
 
                                         <Link to={ `/subscription/${subs.id}` }>
-                                            <div>
+                                            <div className='subs-item-container'>
                                                 <img src={ subs.image_url } width="100" height="75" />
-                                                <div>{ subs.name }</div>
+                                                <div className='sub-name'>{ subs.name }</div>
                                                 {/* if group is paid, show date/amt,freq..if free show only name and img */ }
                                                 { item.group === 'paid' ?
-                                                    <div>
+                                                    <div className='subs-paid-container'>
                                                         <div>{ subs.due_date }</div>
                                                         <div>{ subs.amount }</div>
                                                         <div>{ subs.frequency }</div>
