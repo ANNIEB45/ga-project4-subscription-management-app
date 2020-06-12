@@ -8,6 +8,7 @@
 * Ability to link to bank account and upload banking information for subscription
 * Better styling
 * Calender to visualize payment due dates
+* User accounts
 
 ## _Visit [Manag'Em App](https://managem.herokuapp.com/)_
 
