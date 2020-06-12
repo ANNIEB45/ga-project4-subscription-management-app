@@ -11,6 +11,9 @@
 
 ## _Visit [Manag'Em App](https://managem.herokuapp.com/)
 
+## Project Board
+![PB](https://trello.com/b/vVjLSCp4/subscription-management-service)
+
 ### ERD
 ![ERD](https://imgur.com/r1meIm9)
 
