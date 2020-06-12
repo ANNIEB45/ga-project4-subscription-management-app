@@ -26,5 +26,5 @@ https://trello.com/b/vVjLSCp4/subscription-management-service
 ![Home Page](https://i.imgur.com/Lw5ghs6.png)
 
 #### _Single Subscription Page_
-![Single Subscription Page](https://i.imgur.com/YY8sS1m.png))
+![Single Subscription Page](https://i.imgur.com/YY8sS1m.png)
 
