@@ -65,7 +65,7 @@ export default class SingleSubscription extends Component {
     render() {
         return (
             <div className='single-container'>
-                <button onClick={ () => this.onDelete() }>Delete</button>
+                
                 {/* <button onClick={ () => this.onUpdate() }>Update</button> */ }
                 <div className='item-container'>
                     <div>
@@ -91,8 +91,9 @@ export default class SingleSubscription extends Component {
                             <div>Payment Type: { item.payment_type }</div>
                         </div>
                     )
+                    
                 }) }</div>
-
+                <button onClick={ () => this.onDelete() }>Delete</button>
             </div>
         )
     }
