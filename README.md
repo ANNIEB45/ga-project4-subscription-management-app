@@ -16,12 +16,15 @@
 https://trello.com/b/vVjLSCp4/subscription-management-service
 
 ### ERD
+#### ERD
 ![ERD](https://i.imgur.com/2XknZma.png))
 
 
 ## Wireframes
+
+#### _Home Page_
 ![Home Page](https://i.imgur.com/Lw5ghs6.png)
 
-
+#### _Single Subscription Page_
 ![Single Subscription Page](https://i.imgur.com/YY8sS1m.png))
 
