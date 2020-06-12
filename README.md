@@ -12,6 +12,6 @@
 ## _Visit [Manag'Em App](https://managem.herokuapp.com/)
 
 ### ERD
-![ERD](https://imgur.com/2XknZma)
+![Imgur](https://imgur.com/2XknZma)
 
 ## Wireframes
