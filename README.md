@@ -8,11 +8,24 @@
 * Ability to link to bank account and upload banking information for subscription
 * Better styling
 * Calender to visualize payment due dates
+* User accounts
 
-## _Visit [Manag'Em App](https://managem.herokuapp.com/)
+## _Visit [Manag'Em App](https://managem.herokuapp.com/)_
+
+## Project Board
+![PB](https://trello.com/b/vVjLSCp4/subscription-management-service)
+https://trello.com/b/vVjLSCp4/subscription-management-service
 
 ### ERD
-![ERD](https://imgur.com/r1meIm9)
+#### ERD
+![ERD](https://i.imgur.com/2XknZma.png))
+
 
 ## Wireframes
-![WireFrame](https://imgur.com/eAewgMl)
+
+#### _Home Page_
+![Home Page](https://i.imgur.com/Lw5ghs6.png)
+
+#### _Single Subscription Page_
+![Single Subscription Page](https://i.imgur.com/YY8sS1m.png)
+
