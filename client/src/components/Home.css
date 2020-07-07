@@ -28,8 +28,13 @@
 
 .subs-wrappper{
     display: flex;
-    width: 550px;
+    /* width: 550px; */
     margin: 20px 0;
+}
+
+.subs-wrappper a{
+    text-decoration: none;
+    color: black;
 }
 
 .subs-item-container{
