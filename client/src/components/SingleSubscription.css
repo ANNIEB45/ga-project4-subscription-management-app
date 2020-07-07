@@ -5,10 +5,12 @@
     flex-direction: column;
 }
 
-a{
+.single-container a{
     color: black;
     text-decoration: none;
     font-size: 30px;
+    background-color: lightgray;
+    width: 100%;
 }
 
 .single-container button{
@@ -33,7 +35,7 @@ button:hover{
     border-radius: 20px;
     width: fit-content;
     overflow: hidden;
-    height: 550px;
+    height: 100%;
 
 }
 
