@@ -83,7 +83,7 @@ export default class SingleSubscription extends Component {
                     <h1>History</h1>
                     <h3>Total: ${ this.getTotalPayment() }</h3>
                 </div>
-                <div>{ this.state.records.map((item, index) => {
+                <div className='history-container'>{ this.state.records.map((item, index) => {
                     return (
 
                         <div className='history-wrapper' key={ `2b4kpf${index}` }>
