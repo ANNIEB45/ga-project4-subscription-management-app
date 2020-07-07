@@ -50,6 +50,7 @@ export default class CreateSubscription extends Component {
             <div className='form-container'>
                 <form
                     onSubmit={ this.handleSubmit }>
+                    
                     <fieldset className='fieldset'>
                         <legend>Add A Subscription:</legend>
                         <label>
@@ -80,11 +81,13 @@ export default class CreateSubscription extends Component {
                             name='due_date'
                             value={ newSubscription.due_date }
                             onChange={ this.handleOnChange } />
+                        
                         <input
                             type='number'
                             name='amount'
                             value={ newSubscription.amount }
                             onChange={ this.handleOnChange } />
+                        
                         <select
                             name='frequency'
                             placeholder="Choose A Frequency"
@@ -93,7 +96,8 @@ export default class CreateSubscription extends Component {
                             <option>Monthly</option>
                             <option>Quaterly</option>
                             <option>Yearly</option>
-                            </select>
+                        </select>
+                        
                         <input
                             type='text'
                             name='image_url'

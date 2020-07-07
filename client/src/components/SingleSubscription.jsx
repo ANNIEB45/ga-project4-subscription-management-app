@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 import './SingleSubscription.css'
 
@@ -65,7 +65,8 @@ export default class SingleSubscription extends Component {
     render() {
         return (
             <div className='single-container'>
-                
+            <Link to='/'>Home</Link>
+
                 {/* <button onClick={ () => this.onUpdate() }>Update</button> */ }
                 <div className='item-container'>
                     <div>

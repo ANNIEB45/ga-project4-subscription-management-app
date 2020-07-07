@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Link to='/'>Home</Link>
         <Switch>
           <Route exact path='/' component={ Home } />
           <Route exact path='/subscription/:subscriptionId' component={SingleSubscription} />
