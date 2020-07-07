@@ -63,7 +63,11 @@ export default class CreateSubscription extends Component {
                                 onChange={ this.handleOnChange }>
                                 { this.props.category.map((item, index) => {
                                     return (
-                                        <option key={ `4brl${index}` } value={ item.id } >{ item.group }</option>
+                                        <option
+                                            key={ `4brl${index}` }
+                                            value={ item.id } >
+                                            { item.group }
+                                        </option>
                                     )
                                 }) }
                             </select>
