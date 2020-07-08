@@ -85,7 +85,7 @@ export default class CreateSubscription extends Component {
                             name='due_date'
                             value={ newSubscription.due_date }
                             onChange={ this.handleOnChange } />
-                        
+                        <label>Amount: </label>
                         <input
                             type='number'
                             name='amount'
