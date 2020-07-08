@@ -76,7 +76,7 @@ export default class SingleSubscription extends Component {
                     <div className='item-wrapper'>
                         <div>{ this.state.name }</div>
                         <div>Frequency:{ this.state.frequency }</div>
-                        <div>Due:{ this.state.due_date }</div>
+                        <div>Due:{ moment(this.state.due_date).format('ll') }</div>
                         <div>Amt:{ this.state.amount }</div>
                     </div>
                 </div>
