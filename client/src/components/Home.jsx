@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import CreateSubscription from './CreateSubscription'
 import { Link } from 'react-router-dom'
+import moment from 'moment'
 
 import './Home.css'
 
@@ -59,7 +60,8 @@ export default class Home extends Component {
                                                 {/* if group is paid, show date/amt,freq..if free show only name and img */ }
                                                 { item.group === 'paid' ?
                                                     <div className='subs-paid-container'>
-                                                        <div>{ subs.due_date }</div>
+                                                        {/* moment(event.date).format('ll') */}
+                                                        <div>{ moment(subs.due_date).format('ll') }</div>
                                                         <div>{ subs.amount }</div>
                                                         <div>{ subs.frequency }</div>
                                                     </div> : null }

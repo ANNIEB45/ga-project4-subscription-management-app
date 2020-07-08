@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import moment from 'moment'
 
 import './SingleSubscription.css'
 
@@ -87,7 +88,7 @@ export default class SingleSubscription extends Component {
                     return (
 
                         <div className='history-wrapper' key={ `2b4kpf${index}` }>
-                            <div>Date: { item.date }</div>
+                            <div>Date: { moment(item.date).format('ll') }</div>
                             <div>Amount: ${ this.state.amount }</div>
                             <div>Payment Type: { item.payment_type }</div>
                         </div>
