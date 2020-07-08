@@ -85,14 +85,14 @@ export default class CreateSubscription extends Component {
                             name='due_date'
                             value={ newSubscription.due_date }
                             onChange={ this.handleOnChange } />
-                        <label>Amount: </label>
+                        <label className='amount-label'> Amount </label>
                         <input
                             type='number'
                             name='amount'
                             value={ newSubscription.amount }
                             onChange={ this.handleOnChange } />
                         
-                        <select
+                        <select className='frequency-wrapper'
                             name='frequency'
                             placeholder="Choose A Frequency"
                             value={ newSubscription.frequency }
@@ -110,7 +110,7 @@ export default class CreateSubscription extends Component {
                             onChange={ this.handleOnChange } />
 
 
-                        <input
+                        <input className='form-button'
                             type="submit"
                             value='Add' />
 

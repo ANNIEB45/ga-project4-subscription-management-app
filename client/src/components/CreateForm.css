@@ -36,3 +36,19 @@
 .form-select option{
     margin: 10px 0;
 }
+
+.amount-label{
+    margin: 4px 0;
+}
+
+.frequency-wrapper{
+    margin: 0 7px 0 0;
+}
+
+.form-button{
+    background-color: greenyellow;
+}
+
+.form-button:hover{
+    background-color: lightgrey;
+}
